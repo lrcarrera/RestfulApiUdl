@@ -1,0 +1,29 @@
+{
+  "name": "todolistapi",
+  "version": "1.0.0",
+  "description": "RestfulApi",
+  "main": "index.js",
+  "scripts": {
+    "test": "No test specified"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lrcarrera/RestfulApiUdl.git"
+  },
+  "keywords": [
+    "RESTful"
+  ],
+  "author": "Luis Rosales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lrcarrera/RestfulApiUdl/issues"
+  },
+  "homepage": "https://github.com/lrcarrera/RestfulApiUdl#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.6"
+  }
+}
