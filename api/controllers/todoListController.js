@@ -13,7 +13,11 @@ exports.list_all_tasks = function(req, res) {
 };
 
 exports.test = function(req, res) {
-  window.print("HOLA BEBICHU, K ASE AKI");
+  Task.find({}, function(err, task) {
+    if (err)
+      res.send(err);
+    res.json("Hola bebixu");
+  });
 };
 
 
