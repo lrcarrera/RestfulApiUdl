@@ -10,6 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/lrcarrera/RestfulApiUdl.git"
   },
+  "proxy": "https://enigmatic-mountain-27495.herokuapp.com/"
+  ,
   "keywords": [
     "RESTful"
   ],
@@ -18,12 +20,16 @@
   "bugs": {
     "url": "https://github.com/lrcarrera/RestfulApiUdl/issues"
   },
+  "engines": {
+    "node": "11.7.0"
+  },
   "homepage": "https://github.com/lrcarrera/RestfulApiUdl#readme",
   "devDependencies": {
     "nodemon": "^1.18.9"
   },
   "dependencies": {
     "express": "^4.16.4",
-    "mongoose": "^5.4.6"
+    "mongoose": "^5.4.6",
+    "package.json": "^2.0.1"
   }
 }
