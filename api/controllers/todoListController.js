@@ -12,6 +12,10 @@ exports.list_all_tasks = function(req, res) {
   });
 };
 
+exports.test = function(req, res) {
+  print "hola bebichu";
+};
+
 
 
 
