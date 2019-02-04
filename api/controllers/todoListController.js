@@ -16,7 +16,7 @@ exports.test = function(req, res) {
   Task.find({}, function(err, task) {
     if (err)
       res.send(err);
-    res.json("Hola, te quiero :)");
+    res.json("Hola");
   });
 };
 
