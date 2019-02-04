@@ -12,6 +12,7 @@ module.exports = function(app) {
     .put(todoList.update_a_task)
     .delete(todoList.delete_a_task);
 
-  app.route('/hola')
-    .get(todoList.test)
+  app.route('/customers')
+    .get(todoList.list_all_customers)
+    .post(todoList.create_a_customer);
 };

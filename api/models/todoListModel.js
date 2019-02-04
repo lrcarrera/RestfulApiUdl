@@ -21,4 +21,27 @@ var TaskSchema = new Schema({
   }
 });
 
+var CustomerSchema = new Schema({
+  name: {
+    type: String,
+    required: 'Kindly enter the name of the task'
+  },
+  money: {
+    type: String,
+    required: '2000'
+  },
+  risk_money_laundering: {
+    type: [{
+      type: String,
+      enum: ['low', 'medium', 'high']
+    }],
+    default: ['medium']
+  },
+  Created_date: {
+    type: Date,
+    default: Date.now
+  }
+});
+
 module.exports = mongoose.model('Tasks', TaskSchema);
+module.exports = mongoose.model('Customer', CustomerSchema);
