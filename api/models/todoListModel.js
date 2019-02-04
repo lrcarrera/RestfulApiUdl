@@ -28,7 +28,7 @@ var CustomerSchema = new Schema({
   },
   money: {
     type: String,
-    required: '2000'
+    required: '0'
   },
   risk_money_laundering: {
     type: [{
