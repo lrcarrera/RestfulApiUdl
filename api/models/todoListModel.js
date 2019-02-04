@@ -21,7 +21,7 @@ var TaskSchema = new Schema({
   }
 });
 
-var CustomerSchema = new Schema({
+/*var CustomerSchema = new Schema({
   name: {
     type: String,
     required: 'Kindly enter the name of the task'
@@ -41,7 +41,7 @@ var CustomerSchema = new Schema({
     type: Date,
     default: Date.now
   }
-});
+});*/
 
 module.exports = mongoose.model('Tasks', TaskSchema);
-module.exports = mongoose.model('Customer', CustomerSchema);
+//module.exports = mongoose.model('Customer', CustomerSchema);
