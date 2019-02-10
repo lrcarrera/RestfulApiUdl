@@ -9,7 +9,7 @@ var theport = process.env.PORT || 5000;
 var uristring =
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
-    'mongodb://drewico:Lulu2105@ds211625.mlab.com:11625/heroku_l7t0z2hl';
+    'mongodb://drewico:admin1234@ds211625.mlab.com:11625/heroku_l7t0z2hl';
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 //mongoose.connect('mongodb://localhost/Tododb');
