@@ -1,8 +1,20 @@
 const cool = require('cool-ascii-faces')
-var express = require('express'),
-  app = express(),
-  Task = require('./api/models/todoListModel'), //created model loading here
-  bodyParser = require('body-parser');
+var express = require('express');
+var app = express();
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var passport = require('passport');
+require('./api/config/passport');
+var Task = require('./api/models/todoListModel');
+
+//created model loading here
+var bodyParser = require('body-parser');
+
+
+
 var mongoose = require ("mongoose");
 var theport = process.env.PORT || 5000;
 
@@ -27,6 +39,9 @@ mongoose.connect(uristring, function (err, res) {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//initialize passport
+app.use(passport.initialize());
+
 // Add headers
 app.use(function (req, res, next) {
 
@@ -48,8 +63,16 @@ app.use(function (req, res, next) {
 });
 
 
+
 var routes = require('./api/routes/todoListRoutes'); //importing route
 routes(app); //register the route
+
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401);
+    res.json({"message" : err.name + ": " + err.message});
+  }
+});
 
 app.listen(theport);
 
