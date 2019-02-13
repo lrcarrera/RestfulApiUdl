@@ -2,15 +2,11 @@ const cool = require('cool-ascii-faces')
 var express = require('express');
 var app = express();
 var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 require('./api/config/passport');
 var Task = require('./api/models/todoListModel');
-
-//created model loading here
+//created model loading heree
 var bodyParser = require('body-parser');
 
 

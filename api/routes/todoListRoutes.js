@@ -31,7 +31,7 @@ module.exports = function(app) {
 
   app.route('/login')
     .post(authentication.login);
-    
+
   app.route('/login/:userId')
     .get(profile.profileRead);
 
