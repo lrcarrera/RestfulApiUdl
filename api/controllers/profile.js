@@ -11,6 +11,7 @@ module.exports.profileRead = function(req, res) {
     });
   } else {
     // Otherwise continue
+    console.log("Authorized user");
     User
       .findById(req.payload._id)
       .exec(function(err, user) {

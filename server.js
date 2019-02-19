@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 require('./api/config/passport');
 var Task = require('./api/models/todoListModel');
+require('./api/models/users');
 //created model loading heree
 var bodyParser = require('body-parser');
 
