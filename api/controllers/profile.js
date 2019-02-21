@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var passport = require('passport');
 var User = mongoose.model('User');
+var jwt = require('jsonwebtoken');
 
 
 
