@@ -32,7 +32,7 @@ module.exports = function(app) {
   app.route('/login')
     .post(authentication.login);
 
-  app.route('/profile/:userId')
+  app.route('/profile')
     .get(profile.profileRead);
 
   app.route('/', function(req, res) {
