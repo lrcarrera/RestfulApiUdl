@@ -1,4 +1,5 @@
 const cool = require('cool-ascii-faces')
+var cors = require('cors')
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -38,6 +39,7 @@ app.use(bodyParser.json());
 
 //initialize passport
 app.use(passport.initialize());
+app.use(cors());
 
 // Add headers
 app.use(function (req, res, next) {
