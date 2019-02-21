@@ -31,7 +31,7 @@ module.exports = function(app) {
 
   app.route('/login')
     .post(authentication.login);
-
+//PENDING TO TEST AND RESOLVE THAT ROUTE
   app.route('/profile/:userId')
     .get(profile.profileRead);
 
