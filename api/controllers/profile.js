@@ -5,8 +5,8 @@ module.exports.profileRead = function(req, res) {
 
   //Do error trapping
   // If no user ID exists in the JWT return a 401
-  
-  if (!req.payload._id) {
+  //req.get(headerName)
+  if (!req.headers.Authorization) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
     });
@@ -14,7 +14,7 @@ module.exports.profileRead = function(req, res) {
     // Otherwise continue
     console.log("Authorized user");
     User
-      .findById(req.payload._id)
+      .findById(req.headers.Authorization)
       .exec(function(err, user) {
         res.status(200).json(user);
       });

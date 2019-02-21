@@ -34,7 +34,10 @@ module.exports = function(app) {
 
   app.route('/profile/:userId')
     .get(profile.profileRead);
-
+    
+  app.route('/', function(req, res) {
+     res.json({ message: 'Welcome to the coolest API on earth!' });
+   });
 /*
   app.route('/customers')
     .get(todoList.list_all_customers)
