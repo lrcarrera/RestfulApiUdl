@@ -8,9 +8,7 @@ var jwt = require('jsonwebtoken');
 module.exports.profileRead = function(req, res) {
 
   //Do error trapping
-  // If no user ID exists in the JWT return a 401
-  //req.get(headerName)
-  //res.status(200).json(req.payload._id);
+  // If no user ID exists in the JWT return a 403
   var token = req.headers.authorization.split(" ")[1];
 //  var payload = jwt.decode(token, "MY_SECRET");
 

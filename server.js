@@ -8,7 +8,7 @@ var passport = require('passport');
 require('./api/config/passport');
 var Task = require('./api/models/todoListModel');
 require('./api/models/users');
-//created model loading heree
+//created model loading here
 var bodyParser = require('body-parser');
 
 
@@ -21,10 +21,7 @@ var uristring =
     process.env.MONGOHQ_URL ||
     'mongodb://heroku_l7t0z2hl:rpihc5nokv98besvm18vh82sdh@ds211625.mlab.com:11625/heroku_l7t0z2hl';
 
-  //  'mongodb://drewico:admin1234@ds211625.mlab.com:11625/heroku_l7t0z2hl';
-// mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-//mongoose.connect('mongodb://localhost/Tododb');
 
 mongoose.connect(uristring, function (err, res) {
       if (err) {
@@ -74,5 +71,3 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(theport);
-
-console.log('todo list RESTful API server started on: ' + theport);

@@ -36,10 +36,6 @@ module.exports = function(app) {
     .get(profile.profileRead);
 
   app.route('/', function(req, res) {
-     res.json({ message: 'Welcome to the coolest API on earth!' });
+     res.json({ message: 'Welcome to the coolest API!' });
    });
-/*
-  app.route('/customers')
-    .get(todoList.list_all_customers)
-    .post(todoList.create_a_customer);*/
 };
