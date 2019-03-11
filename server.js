@@ -6,7 +6,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 require('./api/config/passport');
-var Task = require('./api/models/todoListModel');
+var Customer = require('./api/models/customers');
 require('./api/models/users');
 //created model loading here
 var bodyParser = require('body-parser');
@@ -60,7 +60,7 @@ app.use(function (req, res, next) {
 
 
 
-var routes = require('./api/routes/todoListRoutes'); //importing route
+var routes = require('./api/routes/routes'); //importing route
 routes(app); //register the route
 
 app.use(function (err, req, res, next) {

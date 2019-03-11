@@ -1,6 +1,5 @@
 'use strict';
 var jwt = require('express-jwt');
-
 var auth = jwt({
   secret: 'MY_SECRET',
   userProperty: 'payload'
@@ -8,23 +7,24 @@ var auth = jwt({
 
 module.exports = function(app) {
 
-  var todoList = require('../controllers/todoListController');
+  var customerOperations = require('../controllers/customerController');
   var authentication = require('../controllers/authentication');
   var profile = require('../controllers/profile');
 
 
-  // todoList Routes
+  // customerOperations Routes
   /*Add the route like below to restrict access
     router.get('/profile', auth, ctrlProfile.profileRead);
   */
-  app.route('/tasks')
-    .get(todoList.list_all_tasks)
-    .post(todoList.create_a_task);
+  app.route('/customer')
+    .get(customerOperations.list_all_customers)
+    .post(customerOperations.create_a_customer);
 
-  app.route('/tasks/:taskId')
-    .get(todoList.read_a_task)
-    .put(todoList.update_a_task)
-    .delete(todoList.delete_a_task);
+  app.route('/customer/:dni')
+    .get(customerOperations.get_customer)
+    .put(customerOperations.update_customer)
+    .delete(customerOperations.delete_customer);
+
 
   app.route('/register')
     .post(authentication.register);
@@ -33,7 +33,7 @@ module.exports = function(app) {
     .post(authentication.login);
 
   app.route('/profile')
-    .get(profile.profileRead);
+    .get(profile.profile_read);
 
   app.route('/', function(req, res) {
      res.json({ message: 'Welcome to the coolest API!' });
