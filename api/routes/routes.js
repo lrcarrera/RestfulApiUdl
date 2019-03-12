@@ -20,7 +20,7 @@ module.exports = function(app) {
     .get(customerOperations.list_all_customers)
     .post(customerOperations.create_a_customer);
 
-  app.route('/customer/:dni')
+  app.route('/customer/:customerId')
     .get(customerOperations.get_customer)
     .put(customerOperations.update_customer)
     .delete(customerOperations.delete_customer);
