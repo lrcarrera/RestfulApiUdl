@@ -25,6 +25,9 @@ exports.create_a_customer = function(req, res) {
 
 exports.get_customer = function(req, res) {
   Customer.findOne({ dni: req.params.customerId }, function (err, customer) {
+    console.log("chill");
+    console.log(customer);
+
     if (err)
       res.send(err);
     res.json(customer);
