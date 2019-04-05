@@ -41,7 +41,7 @@ exports.update_customer = function(req, res) {
 
 exports.delete_customer = function(req, res) {
   Customer.remove({
-    _id: req.params.customerId
+    dni: req.params.customerId
   }, function(err, customer) {
     if (err)
       res.send(err);
