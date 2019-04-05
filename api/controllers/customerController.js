@@ -24,12 +24,12 @@ exports.create_a_customer = function(req, res) {
 };
 
 exports.get_customer = function(req, res) {
-  Customer.findById(req.params.customerId, function(err, customer) {
+  Customer.findOne({ dni: req.params.customerId }, function (err, customer) {
     if (err)
       res.send(err);
     res.json(customer);
   });
-};
+  };
 
 exports.update_customer = function(req, res) {
   Customer.findOneAndUpdate({_id: req.params.customerId}, req.body, {new: true}, function(err, customer) {
