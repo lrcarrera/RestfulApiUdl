@@ -35,7 +35,7 @@ exports.get_customer = function(req, res) {
   };
 
 exports.update_customer = function(req, res) {
-  Customer.findOneAndUpdate({dni: req.params.customerId}, req.body, {new: true}, function(err, customer) {
+  Customer.findOneAndUpdate({dni: req.params.customerId}, {$set: req.body}, {new: true}, function(err, customer) {
     if (err)
       res.send(err);
     res.json(customer);
