@@ -70,12 +70,25 @@ var CustomerSchema = new Schema({
   phone: {
     type: String,
   },
-  money: {
-    type: String,
-    default: '0,00'
-  },
-  Derivative_products: [{name: String}],
-  Investment_products: [{name: String}]
+  accounts: [{
+    number: {
+      type: String
+    },
+    total_amount: {
+      type: String
+    },
+    movements: [{
+      description: {
+        type: String
+      },
+      amount: {
+        type: String
+      }
+    }]
+  }],
+  advisor: { type: Schema.Types.ObjectId, ref: 'User' },
+  derivative_products: [{name: String}],
+  investment_products: [{name: String}]
 });
 /*
 // Getter

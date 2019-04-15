@@ -14,7 +14,8 @@ var UserSchema = new Schema({
     required: true
   },
   hash: String,
-  salt: String
+  salt: String,
+  customers : [{ type: Schema.Types.ObjectId, ref: 'Customer'}]
 });
 
 UserSchema.methods.setPassword = function(password){
