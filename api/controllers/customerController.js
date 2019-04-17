@@ -53,6 +53,7 @@ exports.delete_customer = function(req, res) {
 };
 
 exports.insert_new_account = function(req, res) {
+  console.log("log: " + req.body);
   Customer.findOneAndUpdate({ dni : req.params.customerId }, {$push: { accounts : req.body } }, {safe: true, upsert: true}, (err, customer) => {
     if (err)
       res.send(err);
