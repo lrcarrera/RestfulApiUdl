@@ -16,6 +16,8 @@ module.exports = function(app) {
   /*Add the route like below to restrict access
     router.get('/profile', auth, ctrlProfile.profileRead);
   */
+
+  /*CUSTOMER ROUTES*/
   app.route('/customer')
     .get(customerOperations.list_all_customers)
     .post(customerOperations.create_a_customer);
@@ -25,7 +27,7 @@ module.exports = function(app) {
     .put(customerOperations.update_customer)
     .delete(customerOperations.delete_customer);
 
-
+  /*ADVISOR ROUTES*/
   app.route('/register')
     .post(authentication.register);
 
@@ -34,6 +36,11 @@ module.exports = function(app) {
 
   app.route('/profile')
     .get(profile.profile_read);
+
+  /*BANK ACCOUNT ROUTES*/
+  app.route('/account/:customerId')
+    .put(customerOperations.insert_new_account);
+    
 
   app.route('/', function(req, res) {
      res.json({ message: 'Welcome to the coolest API!' });

@@ -51,3 +51,11 @@ exports.delete_customer = function(req, res) {
     res.json({ message: 'Customer successfully deleted' });
   });
 };
+
+exports.insert_new_account = function(req, res) {
+  Customer.findOneAndUpdate({ dni : req.params.customerId }, { $push : { "accounts": req.body } }, {new : true}, (err, customer) => {
+    if (err)
+      res.send(err);
+    res.json(customer);
+  });
+};
