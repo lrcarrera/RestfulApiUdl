@@ -71,10 +71,13 @@ var CustomerSchema = new Schema({
     type: String,
   },
   accounts: [{
-    number: {
+    iban: {
       type: String
     },
     total_amount: {
+      type: String
+    },
+    account_name: {
       type: String
     },
     movements: [{
