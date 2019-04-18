@@ -1,5 +1,5 @@
 'use strict';
-
+const util = require('util')
 var mongoose = require('mongoose'),
   Customer = mongoose.model('Customer');
 
@@ -53,8 +53,14 @@ exports.delete_customer = function(req, res) {
 };
 
 exports.insert_new_account = function(req, res) {
-  console.log("log: " + req.body.toString());
-  Customer.findOneAndUpdate({ dni : req.params.customerId }, {$push: { accounts : req.body } }, {new: true}, (err, customer) => {
+  var account = {
+    iban : req.body.iban,
+    total_amount : req.body.total_amount,
+    account_name : req.body.account_name,
+    movements : []
+  };
+  Customer.findOneAndUpdate({ dni : req.params.customerId },{$push: { accounts : account } },{new:true},
+  function(err, customer) {
     if (err)
       res.send(err);
     res.json(customer);
