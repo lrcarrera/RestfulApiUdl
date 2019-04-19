@@ -25,14 +25,11 @@ exports.create_a_customer = function(req, res) {
 
 exports.get_customer = function(req, res) {
   Customer.findOne({ dni: req.params.customerId }, function (err, customer) {
-    console.log("chill");
-    console.log(customer);
-
     if (err)
       res.send(err);
     res.json(customer);
   });
-  };
+};
 
 exports.update_customer = function(req, res) {
   Customer.findOneAndUpdate({dni: req.params.customerId}, {$set: req.body}, {new: true}, function(err, customer) {
@@ -64,5 +61,16 @@ exports.insert_new_account = function(req, res) {
     if (err)
       res.send(err);
     res.json(customer);
+  });
+};
+
+exports.get_accounts = function(req, res) {
+  Customer.findOne({ dni: req.params.customerId }, function (err, customer) {
+    console.log("chill");
+    console.log(customer);
+
+    if (err)
+      res.send(err);
+    res.json(customer.accounts);
   });
 };

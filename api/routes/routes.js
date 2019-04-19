@@ -39,8 +39,9 @@ module.exports = function(app) {
 
   /*BANK ACCOUNT ROUTES*/
   app.route('/account/:customerId')
-    .put(customerOperations.insert_new_account);
-    
+    .put(customerOperations.insert_new_account)
+    .get(customerOperations.get_accounts);
+
 
   app.route('/', function(req, res) {
      res.json({ message: 'Welcome to the coolest API!' });
