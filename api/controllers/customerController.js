@@ -56,8 +56,8 @@ exports.insert_new_account = function(req, res) {
     account_name : req.body.account_name,
     movements : []
   };
-  var new_date = Date.now();
-  
+  var new_date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+
   Customer.findOneAndUpdate({ dni : req.params.customerId },
     {$set: {last_modification_date : new_date} , $push: { accounts : account } },
     {new:true},
