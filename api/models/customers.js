@@ -3,36 +3,36 @@ var Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 //todoListModel
 /*var CustomerSchema = new Schema({
-  name: {
-    type: String,
-    required: 'Kindly enter the name of the customer'
-  },
-  Created_date: {
-    type: Date,
-    default: Date.now
-  },
-  status: {
-    type: [{
-      type: String,
-      enum: ['pending', 'ongoing', 'completed']
-    }],
-    default: ['pending']
-  },
-  risk_money_laundering: {
-    type: [{
-      type: String,
-      enum: ['low', 'medium', 'high']
-    }],
-    default: ['medium']
-  },
-  email: {
-    type: String,
-    default: 'no'
-  },
-  number: {
-    type: String,
-    required: 'Kindly enter the phone number of customer'
-  }
+name: {
+type: String,
+required: 'Kindly enter the name of the customer'
+},
+Created_date: {
+type: Date,
+default: Date.now
+},
+status: {
+type: [{
+type: String,
+enum: ['pending', 'ongoing', 'completed']
+}],
+default: ['pending']
+},
+risk_money_laundering: {
+type: [{
+type: String,
+enum: ['low', 'medium', 'high']
+}],
+default: ['medium']
+},
+email: {
+type: String,
+default: 'no'
+},
+number: {
+type: String,
+required: 'Kindly enter the phone number of customer'
+}
 });
 */
 var CustomerSchema = new Schema({
@@ -62,7 +62,7 @@ var CustomerSchema = new Schema({
       }],
       default: ['medium']
     },
-    created_date: {
+    last_modification_date: {
       type: Date,
       default: Date.now
     },
@@ -96,34 +96,34 @@ var CustomerSchema = new Schema({
 /*
 // Getter
 CustomerSchema.path('money').get(function(num) {
-  return (num / 100).toFixed(2);
+return (num / 100).toFixed(2);
 });
 
 // Setter
 CustomerSchema.path('money').set(function(num) {
-  return num * 100;
+return num * 100;
 });
 */
 /*var CustomerSchema = new Schema({
-  name: {
-    type: String,
-    required: 'Kindly enter the name of the task'
-  },
-  money: {
-    type: String,
-    required: '0'
-  },
-  risk_money_laundering: {
-    type: [{
-      type: String,
-      enum: ['low', 'medium', 'high']
-    }],
-    default: ['medium']
-  },
-  Created_date: {
-    type: Date,
-    default: Date.now
-  }
+name: {
+type: String,
+required: 'Kindly enter the name of the task'
+},
+money: {
+type: String,
+required: '0'
+},
+risk_money_laundering: {
+type: [{
+type: String,
+enum: ['low', 'medium', 'high']
+}],
+default: ['medium']
+},
+Created_date: {
+type: Date,
+default: Date.now
+}
 });*/
 
 module.exports = mongoose.model('Customer', CustomerSchema);
