@@ -94,21 +94,20 @@ var CustomerSchema = new Schema({
     type: [{
       type: String,
       enum: [
-      'B. PRIVADA BARCELONA CENTRO',
-      'B. PRIVADA BARCELONA NORTE',
-      'B. PRIVADA MADRID CENTRO',
-      'B. PRIVADA MADRID NORTE',
-      'B. PRIVADA VALENCIA',
-      'B. PRIVADA ZARAGOZA',
-      'B. PUBLICA BARCELONA CENTRO',
-      'B. PUBLICA MADRID CENTRO',
-      'B. PUBLICA VALENCIA',
-      'B. PUBLICA ZARAGOZA'
-    ]
+        'B. PRIVADA BARCELONA CENTRO',
+        'B. PRIVADA BARCELONA NORTE',
+        'B. PRIVADA MADRID CENTRO',
+        'B. PRIVADA MADRID NORTE',
+        'B. PRIVADA VALENCIA',
+        'B. PRIVADA ZARAGOZA',
+        'B. PUBLICA BARCELONA CENTRO',
+        'B. PUBLICA MADRID CENTRO',
+        'B. PUBLICA VALENCIA',
+        'B. PUBLICA ZARAGOZA'
+      ]
     }],
-    default: ['B. PRIVADA MADRID CENTRO']
-
-  }
+    default: ['B. PUBLICA MADRID CENTRO']
+  },
   derivative_products: [{name: String}],
   investment_products: [{name: String}]
 });
