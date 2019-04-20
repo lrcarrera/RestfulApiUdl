@@ -90,6 +90,25 @@ var CustomerSchema = new Schema({
     }]
   }],
   advisor: { type: Schema.Types.ObjectId, ref: 'User' },
+  assigned_office: {
+    type: [{
+      type: String,
+      enum: [
+      'B. PRIVADA BARCELONA CENTRO',
+      'B. PRIVADA BARCELONA NORTE',
+      'B. PRIVADA MADRID CENTRO',
+      'B. PRIVADA MADRID NORTE',
+      'B. PRIVADA VALENCIA',
+      'B. PRIVADA ZARAGOZA',
+      'B. PUBLICA BARCELONA CENTRO',
+      'B. PUBLICA MADRID CENTRO',
+      'B. PUBLICA VALENCIA',
+      'B. PUBLICA ZARAGOZA'
+    ]
+    }],
+    default: ['B. PRIVADA MADRID CENTRO']
+
+  }
   derivative_products: [{name: String}],
   investment_products: [{name: String}]
 });
