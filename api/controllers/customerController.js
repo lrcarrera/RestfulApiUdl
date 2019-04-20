@@ -32,6 +32,7 @@ exports.get_customer = function(req, res) {
 };
 
 exports.update_customer = function(req, res) {
+  req.body.last_modification_date = Date.now();
   Customer.findOneAndUpdate({dni: req.params.customerId}, {$set: req.body}, {new: true}, function(err, customer) {
     if (err)
     res.send(err);
@@ -56,10 +57,9 @@ exports.insert_new_account = function(req, res) {
     account_name : req.body.account_name,
     movements : []
   };
-  var new_date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
 
   Customer.findOneAndUpdate({ dni : req.params.customerId },
-    {$set: {last_modification_date : new_date} , $push: { accounts : account } },
+    {$set: {last_modification_date : Date.now()} , $push: { accounts : account } },
     {new:true},
 
     function(err, customer) {
