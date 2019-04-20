@@ -114,7 +114,7 @@ var CustomerSchema = new Schema({
     product3: { type: boolean, default: false },
     product4: { type: boolean, default: false },
     product5: { type: boolean, default: false }
-  }
+  },
   investment_products: [{name: String}]
 });
 /*
