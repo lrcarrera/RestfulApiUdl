@@ -108,7 +108,13 @@ var CustomerSchema = new Schema({
     }],
     default: ['B. PUBLICA MADRID CENTRO']
   },
-  derivative_products: [{name: String}],
+  derivative_products: {
+    product1: { type: boolean, default: false },
+    product2: { type: boolean, default: false },
+    product3: { type: boolean, default: false },
+    product4: { type: boolean, default: false },
+    product5: { type: boolean, default: false }
+  }
   investment_products: [{name: String}]
 });
 /*
