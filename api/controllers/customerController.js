@@ -97,5 +97,6 @@ exports.get_accounts = function(req, res) {
 
 
         res.json(response);
-    });*/
+    });
 };
+*/
