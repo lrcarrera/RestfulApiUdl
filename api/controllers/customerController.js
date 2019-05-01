@@ -90,7 +90,11 @@ exports.get_total_movements = function(req, res) {
         customer.accounts.forEach((account) => {
 
             response.push({
-                account_name : account.account_name,
+                account_name : account.account_name
+                    .split(/\s/)
+                    .reduce((response,word)=> response+=word
+                        .slice(0,1),'')
+                    .toUpperCase(),
                 total_movements : account.movements.reduce((total,amount) => total + parseFloat(amount.amount), 0)
             });
         });
