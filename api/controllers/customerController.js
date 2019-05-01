@@ -78,7 +78,7 @@ exports.get_accounts = function(req, res) {
     });
 };
 
-exports.get_total_movements = function(req, res) {
+/*exports.get_total_movements = function(req, res) {
     Customer.findOne({ dni: req.params.customerId }, function (err, customer) {
 
         if (err)
@@ -97,5 +97,5 @@ exports.get_total_movements = function(req, res) {
 
 
         res.json(response);
-    });
+    });*/
 };
