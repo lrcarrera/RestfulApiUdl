@@ -86,6 +86,10 @@ var CustomerSchema = new Schema({
       },
       amount: {
         type: String
+      },
+      movement_date: {
+        type: Date,
+        default: Date.now
       }
     }]
   }],

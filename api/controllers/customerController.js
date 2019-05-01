@@ -97,7 +97,8 @@ exports.get_total_movements = function(req, res) {
                     .toUpperCase(),
                 total_movements : Math
                     .round(account.movements
-                        .reduce((total, amount) => total + parseFloat(amount.amount), 0) * 100) / 100
+                        .filter(({movement}) => movement.movement_date.getMonth()+1 === new Date().getMonth()+1)
+                        .reduce((total, movement) => total + parseFloat(movement.amount), 0) * 100) / 100
             });
         });
 
