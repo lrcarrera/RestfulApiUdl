@@ -1,7 +1,9 @@
 'use strict';
+
 const util = require('util')
 var mongoose = require('mongoose'),
-    Customer = mongoose.model('Customer');
+    Customer = mongoose.model('Customer'),
+    User = mongoose.model('User');
 
 exports.list_all_customers = function(req, res) {
     console.log("entro listall");
@@ -15,12 +17,23 @@ exports.list_all_customers = function(req, res) {
 };
 
 exports.create_a_customer = function(req, res) {
-    var new_customer = new Customer(req.body);
-    new_customer.save(function(err, customer) {
+
+    User.findById(req.body.advisor, function (err, advisor) {
         if (err)
             res.send(err);
-        res.json(customer);
+
+        req.body.customer.advisor = advisor;
+
+        let new_customer = new Customer(req.body.customer);
+        new_customer.save(function(err, customer) {
+            if (err)
+                res.send(err);
+
+            res.json(customer);
+        });
     });
+
+
 };
 
 exports.get_customer = function(req, res) {
@@ -84,7 +97,6 @@ exports.get_total_movements = function(req, res) {
         if (err)
             res.send(err);
 
-        // let customerAccounts = res.json();
         let response = [];
 
         customer.accounts.forEach((account) => {
