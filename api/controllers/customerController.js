@@ -95,7 +95,9 @@ exports.get_total_movements = function(req, res) {
                     .reduce((response,word)=> response+=word
                         .slice(0,1),'')
                     .toUpperCase(),
-                total_movements : account.movements.reduce((total,amount) => total + parseFloat(amount.amount), 0)
+                total_movements : Math
+                    .round(account.movements
+                        .reduce((total, amount) => total + parseFloat(amount.amount), 0) * 100) / 100
             });
         });
 
