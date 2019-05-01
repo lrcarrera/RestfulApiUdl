@@ -19,34 +19,34 @@ module.exports = function(app) {
 
   /*CUSTOMER ROUTES*/
   app.route('/customer')
-    .get(customerOperations.list_all_customers)
-    .post(customerOperations.create_a_customer);
+      .get(customerOperations.list_all_customers)
+      .post(customerOperations.create_a_customer);
 
   app.route('/customer/:customerId')
-    .get(customerOperations.get_customer)
-    .put(customerOperations.update_customer)
-    .delete(customerOperations.delete_customer);
+      .get(customerOperations.get_customer)
+      .put(customerOperations.update_customer)
+      .delete(customerOperations.delete_customer);
 
   /*ADVISOR ROUTES*/
   app.route('/register')
-    .post(authentication.register);
+      .post(authentication.register);
 
   app.route('/login')
-    .post(authentication.login);
+      .post(authentication.login);
 
   app.route('/profile')
-    .get(profile.profile_read);
+      .get(profile.profile_read);
 
   /*BANK ACCOUNT ROUTES*/
   app.route('/account/:customerId')
-    .put(customerOperations.insert_new_account)
-    .get(customerOperations.get_accounts);
+      .put(customerOperations.insert_new_account)
+      .get(customerOperations.get_accounts);
 
-    /*MOVEMENTS ACCOUNT ROUTES*/
-   /* app.route('/movement/:customerId')
-      .get(customerOperations.get_total_movements);*/
+  /*MOVEMENTS ACCOUNT ROUTES*/
+  app.route('/movement/:customerId')
+      .get(customerOperations.get_total_movements);
 
   app.route('/', function(req, res) {
-     res.json({ message: 'Welcome to the coolest API!' });
-   });
+    res.json({ message: 'Welcome to the coolest API!' });
+  });
 };
