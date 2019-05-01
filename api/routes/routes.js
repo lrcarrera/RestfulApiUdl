@@ -42,6 +42,9 @@ module.exports = function(app) {
     .put(customerOperations.insert_new_account)
     .get(customerOperations.get_accounts);
 
+    /*MOVEMENTS ACCOUNT ROUTES*/
+    app.route('/movement/:customerId')
+      .get(customerOperations.get_total_movements);
 
   app.route('/', function(req, res) {
      res.json({ message: 'Welcome to the coolest API!' });
