@@ -91,7 +91,7 @@ exports.get_total_movements = function(req, res) {
 
             response.push({
                 account_name : account.account_name,
-                total_movements : account.movements.reduce((total, movement) => total + parseFloat(movement.amount))
+                total_movements : account.movements.reduce((total,amount) => total + parseFloat(amount.amount), 0)
             });
         });
 
