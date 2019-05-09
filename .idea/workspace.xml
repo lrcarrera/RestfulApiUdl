@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e256f3f-2e01-4a24-91ea-0f7792e3b032" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/customerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/customerController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models/customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/customers.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/controllers/customerController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="112">
+              <caret line="65" column="35" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -45,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/models/customers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="105" column="14" lean-forward="true" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
+            <state relative-caret-position="56">
+              <caret line="89" column="23" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -70,11 +72,24 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>get_total_movements</find>
       <find>number</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/api/models</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,13 +98,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/api/routes/routes.js" />
-        <option value="$PROJECT_DIR$/api/controllers/customerController.js" />
+        <option value="$PROJECT_DIR$/api/models/investmentProducts.js" />
         <option value="$PROJECT_DIR$/api/models/customers.js" />
+        <option value="$PROJECT_DIR$/api/controllers/customerController.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="303" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="703" />
   </component>
@@ -145,6 +161,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557420759960" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -178,7 +195,7 @@
       <workItem from="1556968901323" duration="1106000" />
       <workItem from="1557076904345" duration="577000" />
       <workItem from="1557408007205" duration="244000" />
-      <workItem from="1557410966896" duration="425000" />
+      <workItem from="1557410966896" duration="2205000" />
     </task>
     <task id="LOCAL-00001" summary="Add new route to see movements by account">
       <created>1556718855988</created>
@@ -261,10 +278,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12214000" />
+    <option name="totallyTimeSpent" value="13994000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -275,8 +292,8 @@
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.17447495" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection Results" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="0" visible="true" weight="0.25205478" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.32876712" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.25205478" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
@@ -316,20 +333,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added investment products" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/controllers/customerController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/users.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/controllers/profile.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/authentication.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/routes.js">
@@ -349,10 +353,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/investmentProducts.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/users.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/authentication.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/models/customers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="105" column="14" lean-forward="true" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
+        <state relative-caret-position="56">
+          <caret line="89" column="23" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/customerController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="65" column="35" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="35" />
         </state>
       </provider>
     </entry>

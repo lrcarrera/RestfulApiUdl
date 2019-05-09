@@ -46,6 +46,11 @@ module.exports = function(app) {
   app.route('/movement/:customerId')
       .get(customerOperations.get_total_movements);
 
+  app.route('/investment/:customerId')
+      .put(customerOperations.insert_new_product_movement);
+
+
+
   app.route('/', function(req, res) {
     res.json({ message: 'Welcome to the coolest API!' });
   });

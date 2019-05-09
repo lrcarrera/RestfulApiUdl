@@ -1,12 +1,25 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-
+const office = {
+    office_names : [
+        'B. PRIVADA BARCELONA CENTRO',
+        'B. PRIVADA BARCELONA NORTE',
+        'B. PRIVADA MADRID CENTRO',
+        'B. PRIVADA MADRID NORTE',
+        'B. PRIVADA VALENCIA',
+        'B. PRIVADA ZARAGOZA',
+        'B. PUBLICA BARCELONA CENTRO',
+        'B. PUBLICA MADRID CENTRO',
+        'B. PUBLICA VALENCIA',
+        'B. PUBLICA ZARAGOZA'
+    ]
+}
 var CustomerSchema = new Schema({
 
     dni: {
         type: String,
         unique: true,
-        required: 'Kindly enter dni please'
+        required: 'Mandatory DNI not introduced'
     },
     customer_info: {
         first_name: {
@@ -63,18 +76,7 @@ var CustomerSchema = new Schema({
     assigned_office: {
         type: [{
             type: String,
-            enum: [
-                'B. PRIVADA BARCELONA CENTRO',
-                'B. PRIVADA BARCELONA NORTE',
-                'B. PRIVADA MADRID CENTRO',
-                'B. PRIVADA MADRID NORTE',
-                'B. PRIVADA VALENCIA',
-                'B. PRIVADA ZARAGOZA',
-                'B. PUBLICA BARCELONA CENTRO',
-                'B. PUBLICA MADRID CENTRO',
-                'B. PUBLICA VALENCIA',
-                'B. PUBLICA ZARAGOZA'
-            ]
+            enum: office.office_names
         }],
         default: ['B. PUBLICA MADRID CENTRO']
     },

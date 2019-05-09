@@ -63,6 +63,17 @@ exports.delete_customer = function(req, res) {
     });
 };
 
+exports.insert_new_product_movement = function(req, res) {
+    Customer.findOneAndUpdate({ dni : req.params.customerId },
+        {$set: {investment_products : req.body.products}},
+        {new:true},
+        function(err, customer) {
+            if (err)
+                res.send(err);
+            res.json(customer);
+        });
+};
+
 exports.insert_new_account = function(req, res) {
     var account = {
         iban : req.body.iban,
