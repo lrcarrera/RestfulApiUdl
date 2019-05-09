@@ -88,24 +88,24 @@ var CustomerSchema = new Schema({
     investment_products: {
         familiar_group: {
             tasks: {
-                type: String
+                type: Number
             },
             campaigns: {
-                type: String
+                type: Number
             },
             documents: {
-                type: String
+                type: Number
             }
         },
         economical_group: {
             tasks: {
-                type: String
+                type: Number
             },
             campaigns: {
-                type: String
+                type: Number
             },
             documents: {
-                type: String
+                type: Number
             }
         },
     }
