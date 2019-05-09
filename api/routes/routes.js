@@ -46,9 +46,10 @@ module.exports = function(app) {
   app.route('/movement/:customerId')
       .get(customerOperations.get_total_movements);
 
-  app.route('/investment/:customerId')
-      .put(customerOperations.insert_new_product_movement);
 
+  /*INVESTMENT ACCOUNT ROUTES*/
+  app.route('/investment/:customerId')
+      .put(customerOperations.insert_investment_products);
 
 
   app.route('/', function(req, res) {

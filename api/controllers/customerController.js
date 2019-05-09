@@ -63,10 +63,25 @@ exports.delete_customer = function(req, res) {
     });
 };
 
-exports.insert_new_product_movement = function(req, res) {
+exports.insert_investment_products = function(req, res) {
+    console.log(JSON.stringify(req.body.investment_products));
+
     Customer.findOneAndUpdate({ dni : req.params.customerId },
-        {$set: {investment_products : req.body.products}},
+
+        {$set: {investment_products : {
+                    economical_group: {
+                        tasks: req.body.economicalGroupTasks,
+                        campaigns: req.body.economicalGroupCampaigns,
+                        documents: req.body.economicalGroupDocuments
+                    },
+                    familiar_group: {
+                        tasks: req.body.familiarGroupTasks,
+                        campaigns: req.body.familiarGroupCampaigns,
+                        documents: req.body.familiarGroupDocuments
+                    }
+                }}},
         {new:true},
+
         function(err, customer) {
             if (err)
                 res.send(err);

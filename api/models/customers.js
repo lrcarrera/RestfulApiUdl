@@ -90,24 +90,30 @@ var CustomerSchema = new Schema({
     investment_products: {
         familiar_group: {
             tasks: {
-                type: Number
+                type: Number,
+                default: 0
             },
             campaigns: {
-                type: Number
+                type: Number,
+                default: 0
             },
             documents: {
-                type: Number
+                type: Number,
+                default: 0
             }
         },
         economical_group: {
             tasks: {
-                type: Number
+                type: Number,
+                default: 0
             },
             campaigns: {
-                type: Number
+                type: Number,
+                default: 0
             },
             documents: {
-                type: Number
+                type: Number,
+                default: 0
             }
         },
     }
