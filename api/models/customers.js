@@ -74,11 +74,7 @@ var CustomerSchema = new Schema({
     }],
     advisor: {type: Schema.Types.ObjectId, ref: 'User'},
     assigned_office: {
-        type: [{
-            type: String,
-            enum: office.office_names
-        }],
-        default: ['B. PUBLICA MADRID CENTRO']
+            type: String
     },
     derivative_products: {
         product1: {type: Boolean, default: false},
