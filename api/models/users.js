@@ -40,6 +40,7 @@ UserSchema.methods.generateJwt = function() {
     _id: this._id,
     email: this.email,
     name: this.name,
+    role: this.role,
     exp: parseInt(expiry.getTime() / 1000),
   }, "MY_SECRET"); // REMOVE FROM CODE IN FUTURE ITERATIONS
 };
