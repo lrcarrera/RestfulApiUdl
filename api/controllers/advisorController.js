@@ -17,7 +17,7 @@ exports.list_all_customers_by_advisor = function(req, res) {
 
 exports.get_advisor = function(req, res) {
 
-    User.find({'_id': ObjectId(req.params.advisorId)}, function(err, advisor) {
+    User.find({ _id : ObjectId(req.params.advisorId)}, function(err, advisor) {
         if (err)
             res.send(err);
         res.json(advisor);
