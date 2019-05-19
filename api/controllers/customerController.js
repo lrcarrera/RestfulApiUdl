@@ -59,7 +59,7 @@ exports.delete_customer = function(req, res) {
     }, function(err, customer) {
         if (err)
             res.send(err);
-        res.json({ message: 'Customer successfully deleted' });
+        res.json(customer);
     });
 };
 
