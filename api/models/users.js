@@ -1,7 +1,8 @@
-var mongoose = require('mongoose');
-var crypto = require('crypto');
-var jwt = require('jsonwebtoken');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const crypto = require('crypto');
+const jwt = require('jsonwebtoken');
+const Schema = mongoose.Schema;
+const Role = require('./roles');
 
 var UserSchema = new Schema({
   email: {
@@ -12,6 +13,10 @@ var UserSchema = new Schema({
   name: {
     type: String,
     required: true
+  },
+  role: {
+    type: Role,
+    default: Role.Gestor
   },
   hash: String,
   salt: String
