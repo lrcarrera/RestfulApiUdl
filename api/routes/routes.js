@@ -8,6 +8,8 @@ var auth = jwt({
 module.exports = function(app) {
 
   var customerOperations = require('../controllers/customerController');
+  var advisorOperations = require('../controllers/advisorController');
+
   var authentication = require('../controllers/authentication');
   var profile = require('../controllers/profile');
 
@@ -46,10 +48,14 @@ module.exports = function(app) {
   app.route('/movement/:customerId')
       .get(customerOperations.get_total_movements);
 
-
   /*INVESTMENT ACCOUNT ROUTES*/
   app.route('/investment/:customerId')
       .put(customerOperations.insert_investment_products);
+
+
+  /**ADVISOR ROUTES**/
+  app.route('/customerbyadvisor/:advisorId')
+      .get(advisorOperations.list_all_customers_by_advisor);
 
 
   app.route('/', function(req, res) {
