@@ -57,6 +57,9 @@ module.exports = function(app) {
   app.route('/customerbyadvisor/:advisorId')
       .get(advisorOperations.list_all_customers_by_advisor);
 
+  app.route('/advisor/:advisorId')
+      .get(advisorOperations.get_advisor)
+
 
   app.route('/', function(req, res) {
     res.json({ message: 'Welcome to the coolest API!' });
