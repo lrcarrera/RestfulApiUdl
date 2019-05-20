@@ -5,7 +5,7 @@ const mongoose = require('mongoose'),
     Customer = mongoose.model('Customer'),
     User = mongoose.model('User');
 
-const Role = require('./roles');
+const Role = require('../models/roles');
 
 
 exports.list_all_customers_by_advisor = function(req, res) {
@@ -28,10 +28,12 @@ exports.get_advisor = function(req, res) {
 
 exports.list_all_advisor = function(req, res) {
 
-    User.find({ role: { "$ne": 'Admin' }}, function(err, customer) {
+
+    User.find({ role: { "$ne": Role.Admin }}, function(err, advisor) {
+        console.log(advisor);
         if (err)
             res.send(err);
-        res.json(customer);
+        res.json(advisor);
     });
 };
 

@@ -16,7 +16,7 @@ var UserSchema = new Schema({
   },
   role: {
     type: Role,
-    default: Role.Gestor
+    default: Role.Advisor
   },
   hash: String,
   salt: String
