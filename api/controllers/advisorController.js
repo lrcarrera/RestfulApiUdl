@@ -29,7 +29,7 @@ exports.get_advisor = function(req, res) {
 exports.list_all_advisor = function(req, res) {
 
 
-    User.find({ role: { "$ne": Role.Admin }}, function(err, advisor) {
+    User.find({ role: { "$ne": Role.Admin }}, '-hash -salt', function(err, advisor) {
         console.log(advisor);
         if (err)
             res.send(err);
