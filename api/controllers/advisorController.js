@@ -1,9 +1,11 @@
 'use strict';
 
 const util = require('util')
-var mongoose = require('mongoose'),
+const mongoose = require('mongoose'),
     Customer = mongoose.model('Customer'),
     User = mongoose.model('User');
+
+const Role = require('./roles');
 
 
 exports.list_all_customers_by_advisor = function(req, res) {
@@ -21,6 +23,15 @@ exports.get_advisor = function(req, res) {
         if (err)
             res.send(err);
         res.json(advisor);
+    });
+};
+
+exports.list_all_advisor = function(req, res) {
+
+    User.find({ role: { "$ne": Role.Admin }}, function(err, customer) {
+        if (err)
+            res.send(err);
+        res.json(customer);
     });
 };
 

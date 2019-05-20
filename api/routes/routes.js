@@ -58,7 +58,11 @@ module.exports = function(app) {
       .get(advisorOperations.list_all_customers_by_advisor);
 
   app.route('/advisor/:advisorId')
-      .get(advisorOperations.get_advisor)
+      .get(advisorOperations.get_advisor);
+
+  app.route('/advisor')
+      .get(advisorOperations.list_all_advisor);
+
 
 
   app.route('/', function(req, res) {
