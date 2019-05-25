@@ -46,7 +46,10 @@ exports.get_customer = function(req, res) {
 
 exports.update_customer = function(req, res) {
 
-    User.findById(req.body.advisor, function (err, advisor) {
+    console.log(req.body);
+    console.log(req.params);
+
+    /*User.findById(req.body.advisor, function (err, advisor) {
         if (err)
             res.send(err);
 
@@ -62,7 +65,7 @@ exports.update_customer = function(req, res) {
         });
 
     });
-
+*/
 
 
     /*
