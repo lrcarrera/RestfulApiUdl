@@ -45,12 +45,44 @@ exports.get_customer = function(req, res) {
 };
 
 exports.update_customer = function(req, res) {
-    req.body.last_modification_date = Date.now();
-    Customer.findOneAndUpdate({dni: req.params.customerId}, {$set: req.body}, {new: true}, function(err, customer) {
+
+    User.findById(req.body.advisor, function (err, advisor) {
         if (err)
             res.send(err);
-        res.json(customer);
+
+        req.body.advisor = advisor;
+        req.body.customer_info.last_modification_date = Date.now();
+
+
+        Customer.findOneAndUpdate({dni: req.params.customerId}, {$set: req.body}, {new: true}, function(err, customer) {
+            if (err)
+                res.send(err);
+
+            res.json(customer);
+        });
+
     });
+
+
+
+    /*
+
+    User.findById(req.body.advisor, function (err, advisor) {
+        if (err)
+            res.send(err);
+
+        req.body.customer.advisor = advisor;
+
+        let new_customer = new Customer(req.body.customer);
+        new_customer.save(function(err, customer) {
+            if (err)
+                res.send(err);
+
+            res.json(customer);
+        });
+    });
+
+*/
 };
 
 exports.delete_customer = function(req, res) {
