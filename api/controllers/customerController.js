@@ -5,18 +5,19 @@ var mongoose = require('mongoose'),
     Customer = mongoose.model('Customer'),
     User = mongoose.model('User');
 
-exports.list_all_customers = function(req, res) {
+exports.list_all_customers = function (req, res) {
     console.log("entro listall");
-    console.log(req.params);;
+    console.log(req.params);
+    ;
 
-    Customer.find({}, function(err, customer) {
+    Customer.find({}, function (err, customer) {
         if (err)
             res.send(err);
         res.json(customer);
     });
 };
 
-exports.create_a_customer = function(req, res) {
+exports.create_a_customer = function (req, res) {
 
     User.findById(req.body.advisor, function (err, advisor) {
         if (err)
@@ -25,7 +26,7 @@ exports.create_a_customer = function(req, res) {
         req.body.customer.advisor = advisor;
 
         let new_customer = new Customer(req.body.customer);
-        new_customer.save(function(err, customer) {
+        new_customer.save(function (err, customer) {
             if (err)
                 res.send(err);
 
@@ -36,37 +37,27 @@ exports.create_a_customer = function(req, res) {
 
 };
 
-exports.get_customer = function(req, res) {
-    Customer.findOne({ dni: req.params.customerId }, function (err, customer) {
+exports.get_customer = function (req, res) {
+    Customer.findOne({dni: req.params.customerId}, function (err, customer) {
         if (err)
             res.send(err);
         res.json(customer);
     });
 };
 
-exports.update_customer = function(req, res) {
+exports.update_customer = function (req, res) {
 
     console.log(req.body);
     console.log(req.params);
 
-    /*User.findById(req.body.advisor, function (err, advisor) {
-        if (err)
-            res.send(err);
+        req.body.customer.customer_info.last_modification_date = Date.now();
 
-        req.body.advisor = advisor;
-        req.body.customer_info.last_modification_date = Date.now();
-
-
-        Customer.findOneAndUpdate({dni: req.params.customerId}, {$set: req.body}, {new: true}, function(err, customer) {
+        Customer.findOneAndUpdate({dni: req.params.customerId}, {$set: req.body.customer}, {new: true}, function (err, customer) {
             if (err)
                 res.send(err);
 
             res.json(customer);
         });
-
-    });
-*/
-
 
     /*
 
@@ -88,22 +79,24 @@ exports.update_customer = function(req, res) {
 */
 };
 
-exports.delete_customer = function(req, res) {
+exports.delete_customer = function (req, res) {
     Customer.remove({
         dni: req.params.customerId
-    }, function(err, customer) {
+    }, function (err, customer) {
         if (err)
             res.send(err);
         res.json(customer);
     });
 };
 
-exports.insert_investment_products = function(req, res) {
+exports.insert_investment_products = function (req, res) {
     console.log(JSON.stringify(req.body.investment_products));
 
-    Customer.findOneAndUpdate({ dni : req.params.customerId },
+    Customer.findOneAndUpdate({dni: req.params.customerId},
 
-        {$set: {investment_products : {
+        {
+            $set: {
+                investment_products: {
                     economical_group: {
                         tasks: req.body.economicalGroupTasks,
                         campaigns: req.body.economicalGroupCampaigns,
@@ -114,37 +107,39 @@ exports.insert_investment_products = function(req, res) {
                         campaigns: req.body.familiarGroupCampaigns,
                         documents: req.body.familiarGroupDocuments
                     }
-                }}},
-        {new:true},
+                }
+            }
+        },
+        {new: true},
 
-        function(err, customer) {
+        function (err, customer) {
             if (err)
                 res.send(err);
             res.json(customer);
         });
 };
 
-exports.insert_new_account = function(req, res) {
+exports.insert_new_account = function (req, res) {
     var account = {
-        iban : req.body.iban,
-        total_amount : req.body.total_amount,
-        account_name : req.body.account_name,
-        movements : req.body.movements
+        iban: req.body.iban,
+        total_amount: req.body.total_amount,
+        account_name: req.body.account_name,
+        movements: req.body.movements
     };
 
-    Customer.findOneAndUpdate({ dni : req.params.customerId },
-        {$set: {last_modification_date : Date.now()} , $push: { accounts : account } },
-        {new:true},
+    Customer.findOneAndUpdate({dni: req.params.customerId},
+        {$set: {last_modification_date: Date.now()}, $push: {accounts: account}},
+        {new: true},
 
-        function(err, customer) {
+        function (err, customer) {
             if (err)
                 res.send(err);
             res.json(customer);
         });
 };
 
-exports.get_accounts = function(req, res) {
-    Customer.findOne({ dni: req.params.customerId }, function (err, customer) {
+exports.get_accounts = function (req, res) {
+    Customer.findOne({dni: req.params.customerId}, function (err, customer) {
 
         if (err)
             res.send(err);
@@ -152,8 +147,8 @@ exports.get_accounts = function(req, res) {
     });
 };
 
-exports.get_total_movements = function(req, res) {
-    Customer.findOne({ dni: req.params.customerId }, function (err, customer) {
+exports.get_total_movements = function (req, res) {
+    Customer.findOne({dni: req.params.customerId}, function (err, customer) {
 
         if (err)
             res.send(err);
@@ -163,14 +158,14 @@ exports.get_total_movements = function(req, res) {
         customer.accounts.forEach((account) => {
 
             response.push({
-                account_name : account.account_name
+                account_name: account.account_name
                     .split(/\s/)
-                    .reduce((response,word)=> response+=word
-                        .slice(0,1),'')
+                    .reduce((response, word) => response += word
+                        .slice(0, 1), '')
                     .toUpperCase(),
-                total_movements : Math.round(account.movements
-                        .filter(movement => movement.movement_date.getMonth() + 1 === new Date().getMonth() + 1)
-                        .reduce((total, movement) => total + parseFloat(movement.amount), 0) * 100) / 100
+                total_movements: Math.round(account.movements
+                    .filter(movement => movement.movement_date.getMonth() + 1 === new Date().getMonth() + 1)
+                    .reduce((total, movement) => total + parseFloat(movement.amount), 0) * 100) / 100
             });
         });
 
