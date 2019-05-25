@@ -46,7 +46,8 @@ module.exports = function(app) {
 
   /*MOVEMENTS ACCOUNT ROUTES*/
   app.route('/movement/:customerId')
-      .get(customerOperations.get_total_movements);
+      .get(customerOperations.get_total_movements)
+      .put(customerOperations.insert_movement_to_account);
 
   /*INVESTMENT ACCOUNT ROUTES*/
   app.route('/investment/:customerId')

@@ -50,14 +50,14 @@ exports.update_customer = function (req, res) {
     console.log(req.body);
     console.log(req.params);
 
-        req.body.customer.customer_info.last_modification_date = Date.now();
+    req.body.customer.customer_info.last_modification_date = Date.now();
 
-        Customer.findOneAndUpdate({dni: req.params.customerId}, {$set: req.body.customer}, {new: true}, function (err, customer) {
-            if (err)
-                res.send(err);
+    Customer.findOneAndUpdate({dni: req.params.customerId}, {$set: req.body.customer}, {new: true}, function (err, customer) {
+        if (err)
+            res.send(err);
 
-            res.json(customer);
-        });
+        res.json(customer);
+    });
 
     /*
 
@@ -146,6 +146,26 @@ exports.get_accounts = function (req, res) {
         res.json(customer.accounts);
     });
 };
+
+exports.insert_movement_to_account = function (req, res) {
+    Customer.findOne({dni: req.params.customerId}, function (err, customer) {
+        if (err)
+            res.send(err);
+        for (let i = 0; i < customer.accounts.length; i++) {
+            if (customer.accounts[i].iban === req.body.account_iban) {
+                customer.accounts[i].movements.push(req.body.movement);
+            }
+        }
+        console.log(customer.accounts);
+
+        Customer.findOneAndUpdate({dni: req.params.customerId}, customer, {upsert: true}, function (err, customer) {
+            if (err) return res.send(500, {error: err});
+            return res.json(customer);
+
+        });
+    });
+}
+
 
 exports.get_total_movements = function (req, res) {
     Customer.findOne({dni: req.params.customerId}, function (err, customer) {

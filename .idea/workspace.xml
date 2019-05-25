@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6e256f3f-2e01-4a24-91ea-0f7792e3b032" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/api/controllers/customerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/customerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/controllers/customerController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
+            <state relative-caret-position="-98">
+              <caret line="149" column="58" lean-forward="true" selection-start-line="149" selection-start-column="58" selection-end-line="149" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -65,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="66" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="119">
+              <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -83,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/models/customers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="83" column="35" lean-forward="true" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
+            <state relative-caret-position="161">
+              <caret line="61" column="17" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -120,6 +121,8 @@
       <find>customerOperations</find>
       <find>Gestor</find>
       <find>create_a_</find>
+      <find>movement</find>
+      <find>get_total</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -139,10 +142,10 @@
         <option value="$PROJECT_DIR$/api/controllers/profile.js" />
         <option value="$PROJECT_DIR$/api/controllers/authentication.js" />
         <option value="$PROJECT_DIR$/api/models/customers.js" />
-        <option value="$PROJECT_DIR$/api/routes/routes.js" />
         <option value="$PROJECT_DIR$/api/models/roles.js" />
         <option value="$PROJECT_DIR$/api/models/users.js" />
         <option value="$PROJECT_DIR$/api/controllers/advisorController.js" />
+        <option value="$PROJECT_DIR$/api/routes/routes.js" />
         <option value="$PROJECT_DIR$/api/controllers/customerController.js" />
       </list>
     </option>
@@ -246,7 +249,7 @@
       <workItem from="1557410966896" duration="5594000" />
       <workItem from="1557573623713" duration="595000" />
       <workItem from="1558112429288" duration="16159000" />
-      <workItem from="1558775428178" duration="2306000" />
+      <workItem from="1558775428178" duration="7264000" />
     </task>
     <task id="LOCAL-00001" summary="Add new route to see movements by account">
       <created>1556718855988</created>
@@ -329,7 +332,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36443000" />
+    <option name="totallyTimeSpent" value="41401000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -405,13 +408,6 @@
     <entry file="file://$PROJECT_DIR$/api/config/passport.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/models/offices.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -440,13 +436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/customers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="83" column="35" lean-forward="true" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/models/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -454,10 +443,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/customers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="61" column="17" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/controllers/customerController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
+        <state relative-caret-position="-98">
+          <caret line="149" column="58" lean-forward="true" selection-start-line="149" selection-start-column="58" selection-end-line="149" selection-end-column="58" />
         </state>
       </provider>
     </entry>
