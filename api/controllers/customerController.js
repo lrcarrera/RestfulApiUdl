@@ -153,6 +153,7 @@ exports.insert_movement_to_account = function (req, res) {
             res.send(err);
         for (let i = 0; i < customer.accounts.length; i++) {
             if (customer.accounts[i].iban === req.body.account_iban) {
+                req.body.movement.movement_date = Date.now();
                 customer.accounts[i].movements.push(req.body.movement);
             }
         }
@@ -183,9 +184,6 @@ exports.get_total_movements = function (req, res) {
                     .slice(0, 1), '')
                 .toUpperCase();
 
-            if (!movement.movement_date){
-                movement.movement_date = new Date().getMonth() + 1;
-            }
             let total_movements_aux = Math.round(account.movements
                 .filter(movement => movement.movement_date.getMonth() + 1 === new Date().getMonth() + 1)
                 .reduce((total, movement) => total + parseFloat(movement.amount), 0) * 100) / 100;
