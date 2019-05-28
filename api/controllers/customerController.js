@@ -177,15 +177,23 @@ exports.get_total_movements = function (req, res) {
 
         customer.accounts.forEach((account) => {
 
+            let account_name_aux = account.account_name
+                .split(/\s/)
+                .reduce((response, word) => response += word
+                    .slice(0, 1), '')
+                .toUpperCase();
+
+            if (!movement.movement_date){
+                movement.movement_date = new Date().getMonth() + 1;
+            }
+            let total_movements_aux = Math.round(account.movements
+                .filter(movement => movement.movement_date.getMonth() + 1 === new Date().getMonth() + 1)
+                .reduce((total, movement) => total + parseFloat(movement.amount), 0) * 100) / 100;
+
+
             response.push({
-                account_name: account.account_name
-                    .split(/\s/)
-                    .reduce((response, word) => response += word
-                        .slice(0, 1), '')
-                    .toUpperCase(),
-                total_movements: Math.round(account.movements
-                    .filter(movement => movement.movement_date.getMonth() + 1 === new Date().getMonth() + 1)
-                    .reduce((total, movement) => total + parseFloat(movement.amount), 0) * 100) / 100
+                account_name: account_name_aux,
+                total_movements: total_movements_aux
             });
         });
 
