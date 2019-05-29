@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e256f3f-2e01-4a24-91ea-0f7792e3b032" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/api/controllers/customerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/customerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/advisorController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/advisorController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/controllers/customerController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
+            <state relative-caret-position="104">
+              <caret line="122" selection-start-line="122" selection-end-line="128" />
             </state>
           </provider>
         </entry>
@@ -62,11 +64,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="48" column="49" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="49" />
+            <state relative-caret-position="-441">
+              <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -74,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/controllers/advisorController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="266">
+              <caret line="51" column="2" selection-start-line="51" selection-start-column="2" selection-end-line="51" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -83,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/models/customers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="68" column="25" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="25" />
+            <state relative-caret-position="195">
+              <caret line="82" column="23" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -122,7 +124,9 @@
       <find>movement</find>
       <find>get_total</find>
       <find>get_total_movements</find>
+      <find>put</find>
       <find>date</find>
+      <find>update</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -144,9 +148,9 @@
         <option value="$PROJECT_DIR$/api/models/customers.js" />
         <option value="$PROJECT_DIR$/api/models/roles.js" />
         <option value="$PROJECT_DIR$/api/models/users.js" />
-        <option value="$PROJECT_DIR$/api/controllers/advisorController.js" />
-        <option value="$PROJECT_DIR$/api/routes/routes.js" />
         <option value="$PROJECT_DIR$/api/controllers/customerController.js" />
+        <option value="$PROJECT_DIR$/api/routes/routes.js" />
+        <option value="$PROJECT_DIR$/api/controllers/advisorController.js" />
       </list>
     </option>
   </component>
@@ -250,7 +254,7 @@
       <workItem from="1557573623713" duration="595000" />
       <workItem from="1558112429288" duration="16159000" />
       <workItem from="1558775428178" duration="8101000" />
-      <workItem from="1559059256608" duration="1137000" />
+      <workItem from="1559059256608" duration="2854000" />
     </task>
     <task id="LOCAL-00001" summary="Add new route to see movements by account">
       <created>1556718855988</created>
@@ -333,7 +337,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43375000" />
+    <option name="totallyTimeSpent" value="45092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -344,10 +348,10 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.18416801" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18416801" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.25205478" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.47260273" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.47260273" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
@@ -413,13 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/controllers/authentication.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -430,13 +427,6 @@
     <entry file="file://$PROJECT_DIR$/api/config/passport.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/advisorController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/models/offices.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -444,24 +434,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/routes.js">
+    <entry file="file://$PROJECT_DIR$/api/controllers/profile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="48" column="49" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="49" />
+        <state relative-caret-position="90">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/models/customers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="68" column="25" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="25" />
+        <state relative-caret-position="195">
+          <caret line="82" column="23" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/controllers/customerController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
+        <state relative-caret-position="104">
+          <caret line="122" selection-start-line="122" selection-end-line="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/advisorController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="51" column="2" selection-start-line="51" selection-start-column="2" selection-end-line="51" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-441">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
         </state>
       </provider>
     </entry>

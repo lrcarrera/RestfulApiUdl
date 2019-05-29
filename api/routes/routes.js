@@ -53,7 +53,6 @@ module.exports = function(app) {
   app.route('/investment/:customerId')
       .put(customerOperations.insert_investment_products);
 
-
   /**ADVISOR ROUTES**/
   app.route('/customerbyadvisor/:advisorId')
       .get(advisorOperations.list_all_customers_by_advisor);
@@ -63,6 +62,10 @@ module.exports = function(app) {
 
   app.route('/advisor')
       .get(advisorOperations.list_all_advisor);
+
+  /*PRODUCTS ACCOUNT ROUTES*/
+  app.route('/product/:customerId')
+      .put(advisorOperations.profile_customer_products);
 
 
 

@@ -38,3 +38,17 @@ exports.list_all_advisor = function(req, res) {
 };
 
 
+exports.profile_customer_products = function(req, res) {
+
+
+    Customer.findOneAndUpdate({dni: req.params.customerId},
+        {$set: {last_modification_date: Date.now()}, $push: {derivative_products: req.body.profile}},
+        function (err, customer) {
+        if (err)
+            res.send(err);
+        res.json(customer);
+    });
+
+};
+
+
