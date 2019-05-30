@@ -1,17 +1,17 @@
 'use strict';
-var jwt = require('express-jwt');
-var auth = jwt({
+let jwt = require('express-jwt');
+let auth = jwt({
   secret: 'MY_SECRET',
   userProperty: 'payload'
 });
 
 module.exports = function(app) {
 
-  var customerOperations = require('../controllers/customerController');
-  var advisorOperations = require('../controllers/advisorController');
+  let customerOperations = require('../controllers/customerController');
+  let advisorOperations = require('../controllers/advisorController');
 
-  var authentication = require('../controllers/authentication');
-  var profile = require('../controllers/profile');
+  let authentication = require('../controllers/authentication');
+  let profile = require('../controllers/profile');
 
 
   // customerOperations Routes
@@ -62,6 +62,10 @@ module.exports = function(app) {
 
   app.route('/advisor')
       .get(advisorOperations.list_all_advisor);
+
+  /*PRODUCTS ACCOUNT ROUTES*/
+  app.route('/task/:customerId')
+      .put(advisorOperations.create_customer_task);
 
   /*PRODUCTS ACCOUNT ROUTES*/
   app.route('/product/:customerId')
