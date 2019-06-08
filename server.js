@@ -60,7 +60,7 @@ app.use(function (req, res, next) {
 
 
 
-var routes = require('./api/routes/routes'); //importing route
+const routes = require('./api/routes/routes'); //importing route
 routes(app); //register the route
 
 app.use(function (err, req, res, next) {

@@ -13,7 +13,7 @@ const office = {
         'B. PUBLICA VALENCIA',
         'B. PUBLICA ZARAGOZA'
     ]
-}
+};
 const CustomerSchema = new Schema({
 
     dni: {

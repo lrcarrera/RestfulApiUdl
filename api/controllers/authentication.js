@@ -25,11 +25,11 @@ module.exports.register = function (req, res) {
 module.exports.login = function (req, res) {
 
     passport.authenticate('local', function (err, user, info) {
-        var token;
+        let token;
 
         // If Passport throws/catches an error
         if (err) {
-            res.status(404).json(err);
+            res.status(402).json(err);
             return;
         }
 

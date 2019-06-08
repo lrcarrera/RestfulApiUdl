@@ -8,7 +8,7 @@ module.exports.profile_read = function (req, res) {
 
     //Do error trapping
     // If no user ID exists in the JWT return a 403
-    var token = req.headers.authorization.split(" ")[1];
+    let token = req.headers.authorization.split(" ")[1];
 //  var payload = jwt.decode(token, "MY_SECRET");
 
     jwt.verify(token, 'MY_SECRET', (err, authorizedData) => {
