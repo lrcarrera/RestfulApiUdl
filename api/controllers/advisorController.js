@@ -1,6 +1,4 @@
 'use strict';
-
-const util = require('util')
 const mongoose = require('mongoose'),
     Customer = mongoose.model('Customer'),
     User = mongoose.model('User');
@@ -28,7 +26,6 @@ exports.get_advisor = function (req, res) {
 
 exports.list_all_advisor = function (req, res) {
 
-
     User.find({role: {"$ne": Role.Admin}}, '-hash -salt -__v', function (err, advisor) {
         console.log(advisor);
         if (err)
@@ -40,10 +37,6 @@ exports.list_all_advisor = function (req, res) {
 
 exports.profile_customer_products = function (req, res) {
 
-
-    console.log(req.params);
-    console.log(req.body);
-
     Customer.findOneAndUpdate({dni: req.params.customerId},
         {$set: {last_modification_date: Date.now(), derivative_products: req.body.profile}}, {new: true},
         function (err, customer) {
@@ -51,7 +44,6 @@ exports.profile_customer_products = function (req, res) {
                 res.send(err);
             res.json(customer);
         });
-
 };
 
 exports.create_customer_task = function (req, res) {
@@ -83,7 +75,6 @@ exports.create_customer_task = function (req, res) {
                 res.send(err);
             res.json(customer);
         });
-
 };
 
 

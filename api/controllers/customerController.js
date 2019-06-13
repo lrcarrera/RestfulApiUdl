@@ -1,15 +1,10 @@
 'use strict';
 
-const util = require('util')
-var mongoose = require('mongoose'),
+let mongoose = require('mongoose'),
     Customer = mongoose.model('Customer'),
     User = mongoose.model('User');
 
 exports.list_all_customers = function (req, res) {
-    console.log("entro listall");
-    console.log(req.params);
-    ;
-
     Customer.find({}, function (err, customer) {
         if (err)
             res.send(err);
@@ -33,8 +28,6 @@ exports.create_a_customer = function (req, res) {
             res.json(customer);
         });
     });
-
-
 };
 
 exports.get_customer = function (req, res) {
@@ -46,37 +39,13 @@ exports.get_customer = function (req, res) {
 };
 
 exports.update_customer = function (req, res) {
-
-    console.log(req.body);
-    console.log(req.params);
-
     req.body.customer.customer_info.last_modification_date = Date.now();
-
     Customer.findOneAndUpdate({dni: req.params.customerId}, {$set: req.body.customer}, {new: true}, function (err, customer) {
         if (err)
             res.send(err);
 
         res.json(customer);
     });
-
-    /*
-
-    User.findById(req.body.advisor, function (err, advisor) {
-        if (err)
-            res.send(err);
-
-        req.body.customer.advisor = advisor;
-
-        let new_customer = new Customer(req.body.customer);
-        new_customer.save(function(err, customer) {
-            if (err)
-                res.send(err);
-
-            res.json(customer);
-        });
-    });
-
-*/
 };
 
 exports.delete_customer = function (req, res) {
@@ -93,7 +62,6 @@ exports.insert_investment_products = function (req, res) {
     console.log(JSON.stringify(req.body.investment_products));
 
     Customer.findOneAndUpdate({dni: req.params.customerId},
-
         {
             $set: {
                 investment_products: {
@@ -120,7 +88,7 @@ exports.insert_investment_products = function (req, res) {
 };
 
 exports.insert_new_account = function (req, res) {
-    var account = {
+    let account = {
         iban: req.body.iban,
         total_amount: req.body.total_amount,
         account_name: req.body.account_name,
@@ -165,7 +133,7 @@ exports.insert_movement_to_account = function (req, res) {
 
         });
     });
-}
+};
 
 
 exports.get_total_movements = function (req, res) {
@@ -175,7 +143,6 @@ exports.get_total_movements = function (req, res) {
             res.send(err);
 
         let response = [];
-
         customer.accounts.forEach((account) => {
 
             let account_name_aux = account.account_name
@@ -194,7 +161,6 @@ exports.get_total_movements = function (req, res) {
                 total_movements: total_movements_aux
             });
         });
-
         res.json(response);
     });
 };

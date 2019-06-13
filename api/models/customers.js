@@ -1,19 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const office = {
-    office_names : [
-        'B. PRIVADA BARCELONA CENTRO',
-        'B. PRIVADA BARCELONA NORTE',
-        'B. PRIVADA MADRID CENTRO',
-        'B. PRIVADA MADRID NORTE',
-        'B. PRIVADA VALENCIA',
-        'B. PRIVADA ZARAGOZA',
-        'B. PUBLICA BARCELONA CENTRO',
-        'B. PUBLICA MADRID CENTRO',
-        'B. PUBLICA VALENCIA',
-        'B. PUBLICA ZARAGOZA'
-    ]
-};
+const Office = require('./offices');
+
 const CustomerSchema = new Schema({
 
     dni: {
@@ -76,7 +64,7 @@ const CustomerSchema = new Schema({
     assigned_office: {
         type: [{
             type: String,
-            enum: office.office_names
+            enum: Office.office_names
         }],
         default: ['B. PUBLICA MADRID CENTRO']
     },
@@ -118,38 +106,5 @@ const CustomerSchema = new Schema({
         },
     }
 });
-/*
-// Getter
-CustomerSchema.path('money').get(function(num) {
-return (num / 100).toFixed(2);
-});
-
-// Setter
-CustomerSchema.path('money').set(function(num) {
-return num * 100;
-});
-*/
-/*var CustomerSchema = new Schema({
-name: {
-type: String,
-required: 'Kindly enter the name of the task'
-},
-money: {
-type: String,
-required: '0'
-},
-risk_money_laundering: {
-type: [{
-type: String,
-enum: ['low', 'medium', 'high']
-}],
-default: ['medium']
-},
-Created_date: {
-type: Date,
-default: Date.now
-}
-});*/
 
 module.exports = mongoose.model('Customer', CustomerSchema);
-//module.exports = mongoose.model('Customer', CustomerSchema);

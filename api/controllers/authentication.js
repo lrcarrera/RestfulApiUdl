@@ -4,7 +4,6 @@ const User = mongoose.model('User');
 
 module.exports.register = function (req, res) {
 
-    //TODO: In that code, I should catch traps from client
     const user = new User();
 
     user.name = req.body.name;
@@ -12,7 +11,7 @@ module.exports.register = function (req, res) {
     user.role = req.body.role;
     user.setPassword(req.body.password);
 
-    user.save(function (err) {
+    user.save(function () {
         let token;
         token = user.generateJwt();
         res.status(200);
@@ -45,5 +44,4 @@ module.exports.login = function (req, res) {
             res.status(401).json(info);
         }
     })(req, res);
-
 };
